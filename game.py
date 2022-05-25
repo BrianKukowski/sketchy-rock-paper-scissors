@@ -45,7 +45,7 @@ def play_game(player_1, player_2):
 
     while not find_winner(wins, wins.keys()):
         roll1 = get_roll(player_1, roll_names)
-        roll2 = random.choice(roll_names)
+        roll2 = get_computer_roll(roll_names)
 
         if not roll1:
             print("Try again!")
@@ -93,6 +93,10 @@ def check_for_winning_throw(player_1, player_2, roll1, roll2):
 
     return winner
 
+def get_computer_roll(roll_names):
+    names = roll_names + [r for r in roll_names if r.startswith('s')]
+    roll2 = random.choice(names)
+    return roll2
 
 def get_roll(player_name, roll_names):
     print("Available rolls:")
