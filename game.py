@@ -94,7 +94,6 @@ def check_for_winning_throw(player_1, player_2, roll1, roll2):
     return winner
 
 def get_computer_roll(roll_names):
-    print("-- Computer Biased towards the s -- hint hint")
     names = roll_names + [r for r in roll_names if r.startswith('s')]
     roll2 = random.choice(names)
     return roll2
